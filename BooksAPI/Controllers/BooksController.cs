@@ -20,8 +20,8 @@ namespace BooksAPI.Controllers
             _context = context;
         }
 
-        [HttpGet("{AuthorName}")]
-        public async Task<int> Get(string AuthorName)
+        [HttpGet("GetBookCount")]
+        public async Task<int> GetBookCount(string AuthorName)
         {
             var bookCount = (from a in _context.Authors
                              join ab in _context.AuthorsBooks on a.Id equals ab.AuthorId
